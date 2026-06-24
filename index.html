@@ -78,6 +78,20 @@
                     <a href="#lainnya" class="text-slate-600 hover:text-orangeCustom transition-colors duration-200">Lainnya</a>
                 </div>
 
+                <!-- INDIKATOR PENGUNJUNG HARI INI -->
+        <div class="mt-12 flex justify-center">
+            <div class="inline-flex items-center gap-3 bg-slate-900 text-white px-5 py-2.5 rounded-full shadow-lg border border-slate-800 text-xs font-semibold tracking-wide">
+                <span class="flex h-2 w-2 relative">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span class="text-slate-400">Pengunjung Hari Ini:</span>
+                <span id="visitor-count" class="text-emerald-400 font-mono font-bold text-sm bg-emerald-500/10 px-2.5 py-0.5 rounded-md border border-emerald-500/20">
+                    Loading...
+                </span>
+            </div>
+        </div>
+
                 <!-- Tombol Garis 3 Tampilan HP -->
                 <div class="md:hidden flex items-center">
                     <button id="hamburger-btn" class="text-slate-600 hover:text-orangeCustom focus:outline-none">
@@ -244,21 +258,7 @@
             </a>
 
         </div>
-
-        <!-- INDIKATOR PENGUNJUNG HARI INI -->
-        <div class="mt-12 flex justify-center">
-            <div class="inline-flex items-center gap-3 bg-slate-900 text-white px-5 py-2.5 rounded-full shadow-lg border border-slate-800 text-xs font-semibold tracking-wide">
-                <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span class="text-slate-400">Pengunjung Hari Ini:</span>
-                <span id="visitor-count" class="text-emerald-400 font-mono font-bold text-sm bg-emerald-500/10 px-2.5 py-0.5 rounded-md border border-emerald-500/20">
-                    Loading...
-                </span>
-            </div>
-        </div>
-        
+       
     </main>
 
    
