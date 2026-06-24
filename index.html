@@ -236,10 +236,177 @@
         </div>
     </main>
 
-    <!-- SECTION LAINNYA -->
-    <section id="rapor" class="max-w-7xl mx-auto px-4 py-20 border-t border-slate-300/40 text-center scroll-mt-20">
-        <h2 class="text-xl font-bold text-slate-400">Section Rapor (Coming Soon)</h2>
+        <!-- SECTION 3: RAPOR (SISTEM DROPDOWN INTERAKTIF) -->
+    <section id="rapor" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-300/40 scroll-mt-20">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between border-b border-slate-300/60 pb-5 mb-10">
+            <div>
+                <h2 class="text-2xl font-bold tracking-tight text-slate-900 flex items-center gap-2">
+                    <span class="w-2.5 h-6 bg-mintAccent text-emerald-700 bg-emerald-600/20 rounded-full flex items-center justify-center text-xs">●</span> 
+                    Akses Rapor Digital
+                </h2>
+                <p class="text-sm text-slate-500 mt-1">Pilih kategori rapor, lalu pilih kelas atau program khusus Anda.</p>
+            </div>
+        </div>
+
+        <!-- GRID UTAMA 7 KATEGORI RAPOR -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            
+            <!-- 1. Rapor STS 1 -->
+            <div class="box-3d bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4">📑</div>
+                    <h3 class="font-bold text-lg text-slate-900">Rapor STS 1</h3>
+                    <p class="text-sm text-slate-500 mt-1">Sains, Teknologi, dan Sosial - Semester Ganjil.</p>
+                </div>
+                <!-- Dropdown Trigger -->
+                <button onclick="toggleRaporDropdown('sts1')" class="mt-6 w-full py-2.5 px-4 bg-slate-50 hover:bg-orangeCustom/10 text-orangeCustom font-bold text-xs rounded-xl flex items-center justify-between border border-slate-100 transition-colors">
+                    <span>Pilih Kelas (7A - 9C2)</span>
+                    <span id="icon-sts1" class="transition-transform duration-300">▼</span>
+                </button>
+                <!-- Isi Dropdown Kelas -->
+                <div id="drop-sts1" class="hidden grid grid-cols-5 gap-2 mt-4 pt-4 border-t border-slate-100 animate-fadeIn">
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C1</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C2</a>
+                </div>
+            </div>
+
+            <!-- 2. Rapor STS 2 -->
+            <div class="box-3d bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4">📑</div>
+                    <h3 class="font-bold text-lg text-slate-900">Rapor STS 2</h3>
+                    <p class="text-sm text-slate-500 mt-1">Sains, Teknologi, dan Sosial - Semester Genap.</p>
+                </div>
+                <button onclick="toggleRaporDropdown('sts2')" class="mt-6 w-full py-2.5 px-4 bg-slate-50 hover:bg-orangeCustom/10 text-orangeCustom font-bold text-xs rounded-xl flex items-center justify-between border border-slate-100 transition-colors">
+                    <span>Pilih Kelas (7A - 9C2)</span>
+                    <span id="icon-sts2" class="transition-transform duration-300">▼</span>
+                </button>
+                <div id="drop-sts2" class="hidden grid grid-cols-5 gap-2 mt-4 pt-4 border-t border-slate-100 animate-fadeIn">
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C1</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C2</a>
+                </div>
+            </div>
+
+            <!-- 3. Rapor SAS 1 -->
+            <div class="box-3d bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4">📊</div>
+                    <h3 class="font-bold text-lg text-slate-900">Rapor SAS 1</h3>
+                    <p class="text-sm text-slate-500 mt-1">Sumatif Akhir Semester - Semester Ganjil.</p>
+                </div>
+                <button onclick="toggleRaporDropdown('sas1')" class="mt-6 w-full py-2.5 px-4 bg-slate-50 hover:bg-orangeCustom/10 text-orangeCustom font-bold text-xs rounded-xl flex items-center justify-between border border-slate-100 transition-colors">
+                    <span>Pilih Kelas (7A - 9C2)</span>
+                    <span id="icon-sas1" class="transition-transform duration-300">▼</span>
+                </button>
+                <div id="drop-sas1" class="hidden grid grid-cols-5 gap-2 mt-4 pt-4 border-t border-slate-100 animate-fadeIn">
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C1</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C2</a>
+                </div>
+            </div>
+
+            <!-- 4. Rapor SAS 2 -->
+            <div class="box-3d bg-white p-6 rounded-2xl shadow-md border border-slate-100 flex flex-col justify-between">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4">📊</div>
+                    <h3 class="font-bold text-lg text-slate-900">Rapor SAS 2</h3>
+                    <p class="text-sm text-slate-500 mt-1">Sumatif Akhir Semester - Semester Genap.</p>
+                </div>
+                <button onclick="toggleRaporDropdown('sas2')" class="mt-6 w-full py-2.5 px-4 bg-slate-50 hover:bg-orangeCustom/10 text-orangeCustom font-bold text-xs rounded-xl flex items-center justify-between border border-slate-100 transition-colors">
+                    <span>Pilih Kelas (7A - 9C2)</span>
+                    <span id="icon-sas2" class="transition-transform duration-300">▼</span>
+                </button>
+                <div id="drop-sas2" class="hidden grid grid-cols-5 gap-2 mt-4 pt-4 border-t border-slate-100 animate-fadeIn">
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">7C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">8C</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9A</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9B</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C1</a>
+                    <a href="#" class="py-1.5 text-center text-xs font-bold bg-slate-100 hover:bg-mintAccent/30 text-slate-700 rounded-lg transition-colors">9C2</a>
+                </div>
+            </div>
+
+            <!-- 5. Rapor Mutu Al-Qur'an (Langsung Tautan) -->
+            <a href="#" class="box-3d bg-white p-6 rounded-2xl flex flex-col justify-between group shadow-md border border-slate-100">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-mintAccent/30 group-hover:text-emerald-700 transition-colors duration-300">🕌</div>
+                    <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition-colors">Rapor Mutu Al-Qur'an</h3>
+                    <p class="text-sm text-slate-500 mt-1">Laporan penilaian kompetensi tilawah, tahfidz, dan tartil.</p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-orangeCustom group-hover:text-emerald-700 gap-1">
+                    Buka Tautan <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+            </a>
+
+            <!-- 6. Rapor Mutu Bilingual -->
+            <a href="#" class="box-3d bg-white p-6 rounded-2xl flex flex-col justify-between group shadow-md border border-slate-100">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-mintAccent/30 group-hover:text-emerald-700 transition-colors duration-300">🗣️</div>
+                    <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition-colors">Rapor Mutu Bilingual</h3>
+                    <p class="text-sm text-slate-500 mt-1">Laporan kecakapan komunikasi Bahasa Inggris dan Arab.</p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-orangeCustom group-hover:text-emerald-700 gap-1">
+                    Buka Tautan <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+            </a>
+
+            <!-- 7. Rapor Mutu ICT -->
+            <a href="#" class="box-3d bg-white p-6 rounded-2xl flex flex-col justify-between group shadow-md border border-slate-100">
+                <div>
+                    <div class="w-12 h-12 rounded-xl bg-orangeCustom/10 text-orangeCustom flex items-center justify-center text-2xl font-bold mb-4 group-hover:bg-mintAccent/30 group-hover:text-emerald-700 transition-colors duration-300">💻</div>
+                    <h3 class="font-bold text-lg text-slate-900 group-hover:text-emerald-700 transition-colors">Rapor Mutu ICT</h3>
+                    <p class="text-sm text-slate-500 mt-1">Laporan penguasaan teknologi informasi dan koding dasar.</p>
+                </div>
+                <div class="mt-6 flex items-center text-xs font-bold text-orangeCustom group-hover:text-emerald-700 gap-1">
+                    Buka Tautan <span class="group-hover:translate-x-1 transition-transform">→</span>
+                </div>
+            </a>
+
+        </div>
     </section>
+
+    <!-- KODE JAVASCRIPT LOGIKA DROPDOWN (Taruh di bagian bawah sebelum tag </body>) -->
+    <script>
+        function toggleRaporDropdown(id) {
+            const dropdown = document.getElementById('drop-' + id);
+            const icon = document.getElementById('icon-' + id);
+            
+            if (dropdown.classList.contains('hidden')) {
+                dropdown.classList.remove('hidden');
+                icon.style.transform = 'rotate(180deg)';
+            } else {
+                dropdown.classList.add('hidden');
+                icon.style.transform = 'rotate(0deg)';
+            }
+        }
+    </script>
 
     <section id="arsip" class="max-w-7xl mx-auto px-4 py-20 border-t border-slate-300/40 text-center scroll-mt-20">
         <h2 class="text-xl font-bold text-slate-400">Section Arsip (Coming Soon)</h2>
