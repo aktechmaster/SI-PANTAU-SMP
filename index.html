@@ -71,20 +71,7 @@
                         <span class="font-black text-sm md:text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-orangeCustom to-emerald-700 leading-tight">
                             SMP IT AL-KAUTSAR
                         </span>
-                        
-                        <div class="flex items-center gap-1.5 mt-0.5 bg-slate-900/40 text-slate-900 px-2 py-0.5 rounded-md text-[9px] font-bold tracking-wide w-max border border-slate-900/10 backdrop-blur-sm">
-                            <span class="flex h-1.5 w-1.5 relative">
-                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-500 opacity-75"></span>
-                                <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-600"></span>
-                            </span>
-                            <span class="opacity-80">PENGUNJUNG:</span>
-                            <span id="visitor-count" class="font-mono text-emerald-800 bg-white/60 px-1 rounded font-black text-[10px]">
-                                12
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                
+                                       
                 <div class="hidden md:flex space-x-8 font-semibold text-sm">
                     <a href="#beranda" class="text-orangeCustom border-b-2 border-orangeCustom px-1 py-1">Beranda</a>
                     <a href="#laporan" class="text-slate-600 hover:text-orangeCustom transition-colors duration-200">Laporan</a>
@@ -463,35 +450,6 @@
             });
         });
     </script>
-
-    <!-- LOGIKA HITUNG PENGUNJUNG (COUNTAPI) -->
-    <script>
-        function getFormattedDate() {
-            const today = new Date();
-            // Menghasilkan format tanggal unik seperti "2026-06-24" agar hitungan di-reset setiap hari baru
-            return today.toISOString().split('T')[0];
-        }
-
-        function loadVisitorCount() {
-            const dateKey = getFormattedDate();
-            const namespace = "smpit-alkautsar-mukomuko"; 
-            const key = `visithariini-${dateKey}`;
-
-            fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
-                .then(res => res.json())
-                .then(data => {
-                    document.getElementById('visitor-count').innerText = data.value.toLocaleString('id-ID');
-                })
-                .catch(err => {
-                    console.log("CountAPI Error, menggunakan fallback.");
-                    document.getElementById('visitor-count').innerText = "12"; 
-                });
-        }
-        document.addEventListener("DOMContentLoaded", loadVisitorCount);
-
-        // Jalankan fungsi hitung saat halaman selesai dimuat sepenuhnya
-        document.addEventListener("DOMContentLoaded", loadVisitorCount);
-    </script>
-    
+   
 </body>
 </html>
