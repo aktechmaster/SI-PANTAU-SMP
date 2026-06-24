@@ -63,36 +63,30 @@
     <nav class="sticky top-0 z-50 bg-[#91f2b8]/80 backdrop-blur-md border-b border-slate-200 shadow-sm">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- Logo & Nama Sekolah -->
-                <div class="flex items-center gap-3">
-                    <img src="logosmpcolor.png" alt="Logo SMP IT Al-Kautsar" class="h-10 w-auto object-contain">
-                    <span class="font-black text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-orangeCustom to-emerald-700">SMP IT AL-KAUTSAR</span>
+                
+                <div class="flex items-center gap-3 min-w-0">
+                    <img src="logosmpcolor.png" alt="Logo SMP IT Al-Kautsar" class="h-10 w-auto object-contain flex-shrink-0">
+                    <span class="font-black text-sm md:text-lg tracking-wider text-transparent bg-clip-text bg-gradient-to-r from-orangeCustom to-emerald-700 truncate">
+                        SMP IT AL-KAUTSAR
+                    </span>
                 </div>
                 
-                <!-- Navigasi Tampilan Laptop -->
-                <div class="hidden md:flex space-x-8 font-semibold text-sm">
+                <div class="hidden md:flex items-center space-x-8 font-semibold text-sm">
                     <a href="#beranda" class="text-orangeCustom border-b-2 border-orangeCustom px-1 py-1">Beranda</a>
                     <a href="#laporan" class="text-slate-600 hover:text-orangeCustom transition-colors duration-200">Laporan</a>
                     <a href="#rapor" class="text-slate-600 hover:text-orangeCustom transition-colors duration-200">Rapor</a>
                     <a href="#arsip" class="text-slate-600 hover:text-orangeCustom transition-colors duration-200">Arsip</a>
                     <a href="#lainnya" class="text-slate-600 hover:text-orangeCustom transition-colors duration-200">Lainnya</a>
+                    
+                    <div class="flex items-center gap-2 bg-slate-900 text-white px-3 py-1.5 rounded-full border border-slate-800 text-[11px] font-bold tracking-wide shadow-sm">
+                        <span class="flex h-1.5 w-1.5 relative">
+                            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                            <span class="relative inline-flex rounded-full h-1.5 w-1.5 bg-emerald-500"></span>
+                        </span>
+                        <span id="visitor-count-desktop" class="text-emerald-400 font-mono">Loading...</span>
+                    </div>
                 </div>
 
-                <!-- INDIKATOR PENGUNJUNG HARI INI -->
-        <div class="mt-12 flex justify-center">
-            <div class="inline-flex items-center gap-3 bg-slate-900 text-white px-5 py-2.5 rounded-full shadow-lg border border-slate-800 text-xs font-semibold tracking-wide">
-                <span class="flex h-2 w-2 relative">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <span class="text-slate-400">Pengunjung Hari Ini:</span>
-                <span id="visitor-count" class="text-emerald-400 font-mono font-bold text-sm bg-emerald-500/10 px-2.5 py-0.5 rounded-md border border-emerald-500/20">
-                    Loading...
-                </span>
-            </div>
-        </div>
-
-                <!-- Tombol Garis 3 Tampilan HP -->
                 <div class="md:hidden flex items-center">
                     <button id="hamburger-btn" class="text-slate-600 hover:text-orangeCustom focus:outline-none">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -100,11 +94,22 @@
                         </svg>
                     </button>
                 </div>
+
             </div>
         </div>
 
-        <!-- Menu Dropdown Tampilan HP -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 pt-2 pb-4 space-y-2 font-semibold shadow-inner">
+            <div class="flex items-center justify-between bg-slate-900 text-white px-4 py-2.5 rounded-xl text-xs font-bold mb-3 shadow-sm">
+                <div class="flex items-center gap-2">
+                    <span class="flex h-2 w-2 relative">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                    </span>
+                    <span class="text-slate-400">Pengunjung Hari Ini</span>
+                </div>
+                <span id="visitor-count-mobile" class="text-emerald-400 font-mono bg-emerald-500/10 px-2 py-0.5 rounded border border-emerald-500/20">Loading...</span>
+            </div>
+
             <a href="#beranda" class="block text-orangeCustom bg-orangeCustom/5 px-3 py-2 rounded-xl">Beranda</a>
             <a href="#laporan" class="block text-slate-700 hover:text-orangeCustom px-3 py-2 rounded-xl transition-colors">Laporan</a>
             <a href="#rapor" class="block text-slate-700 hover:text-orangeCustom px-3 py-2 rounded-xl transition-colors">Rapor</a>
@@ -475,20 +480,21 @@
 
         function loadVisitorCount() {
             const dateKey = getFormattedDate();
-            // Namespace menggunakan nama domain/sekolah Anda agar tidak tertukar dengan web lain
             const namespace = "smpit-alkautsar-mukomuko"; 
             const key = `visithariini-${dateKey}`;
 
             fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
                 .then(res => res.json())
                 .then(data => {
-                    // Update angka di layar dengan animasi transisi angka yang halus
-                    document.getElementById('visitor-count').innerText = data.value.toLocaleString('id-ID');
+                    const formattedValue = data.value.toLocaleString('id-ID');
+                    // Suntikkan ke versi desktop dan mobile sekaligus
+                    if(document.getElementById('visitor-count-desktop')) document.getElementById('visitor-count-desktop').innerText = formattedValue;
+                    if(document.getElementById('visitor-count-mobile')) document.getElementById('visitor-count-mobile').innerText = formattedValue;
                 })
                 .catch(err => {
-                    // Jika API sedang sibuk/down, tampilkan angka simulasi default agar web tidak terlihat rusak
                     console.log("CountAPI Error, menggunakan fallback.");
-                    document.getElementById('visitor-count').innerText = "12"; 
+                    if(document.getElementById('visitor-count-desktop')) document.getElementById('visitor-count-desktop').innerText = "12";
+                    if(document.getElementById('visitor-count-mobile')) document.getElementById('visitor-count-mobile').innerText = "12";
                 });
         }
 
